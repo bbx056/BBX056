@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青花瓷信息可视化设计 - 设计说明</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-detail {
+            padding: 80px 0;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .project-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .project-description {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+        .project-description h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .project-description p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .project-description ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .project-description li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        .project-image {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        .back-link i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Creative.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="portfolio.html" class="active">作品集</a></li>
+                <li><a href="cases.html">案例展示</a></li>
+                <li><a href="about.html">个人简介</a></li>
+                <li><a href="contact.html">联系方式</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>青花瓷信息可视化设计｜精简项目说明</h1>
+            </div>
+
+            <div class="project-images">
+                <div class="project-image">
+                    <img src="images/work-1.jpg" alt="青花瓷信息可视化设计" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <div class="project-description">
+                <h2>一、项目概述</h2>
+                <p>本项目以中国四大名瓷之一的青花瓷为主题，通过信息可视化设计，系统梳理其产地、器型、制作工艺与历史脉络，将传统陶瓷文化转化为直观易读的视觉内容，实现非遗文化的轻量化科普传播。</p>
+                
+                <h2>二、设计理念</h2>
+                <p>以"传统基因+现代表达"为核心：</p>
+                <ul>
+                    <li><strong>色彩上</strong>，沿用青花瓷经典蓝白配色，呼应器物本身的东方美学；</li>
+                    <li><strong>形式上</strong>，以地图、流程插画、数据图表为载体，拆解专业知识，降低认知门槛；</li>
+                    <li><strong>内核上</strong>，以"认知-工艺-发展"的递进逻辑，完整呈现青花瓷的文化价值与匠心精神。</li>
+                </ul>
+                
+                <h2>三、项目成果</h2>
+                <p>完成3张系列信息可视化海报：</p>
+                <ul>
+                    <li>1. 基础认知海报：呈现产地分布、器型分类与核心特征；</li>
+                    <li>2. 工艺流程海报：还原制瓷全工序的线性叙事插画；</li>
+                    <li>3. 数据脉络海报：以图表形式展现青花瓷的朝代演变与品类占比。</li>
+                </ul>
+                
+                <h2>四、设计流程</h2>
+                <ul>
+                    <li>1. 调研梳理：收集青花瓷的产地、工艺、历史资料，筛选关键信息并搭建逻辑框架；</li>
+                    <li>2. 视觉定义：确定蓝白主色调与线描插画风格，提取瓷纹元素作为装饰细节；</li>
+                    <li>3. 信息转译：将文字信息转化为地图、流程插画、数据图表等可视化形式；</li>
+                    <li>4. 优化定稿：调整版式层级、色彩对比与信息可读性，完成系列作品设计。</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="portfolio.html" class="btn" style="margin-right: 20px;">
+                    <i>←</i> 返回作品集
+                </a>
+                <a href="index.html" class="btn btn-secondary">
+                    返回首页
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 设计师作品集 | 用心设计，用创意点亮世界</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

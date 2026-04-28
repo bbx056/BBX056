@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介 - 设计师作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF69B4' fill-opacity='0.8'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23FF1493' stroke-width='2' stroke-opacity='0.6'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3C/svg%3E") 16 16, auto;
+        }
+        a, button, .btn, .portfolio-card, .case-item, .design-philosophy-item, .menu-toggle {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF1493' fill-opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23FF69B4' stroke-width='2' stroke-opacity='0.7'/%3E%3Ccircle cx='16' cy='16' r='4' fill='white'/%3E%3Cpath d='M16 4 L16 8 M16 24 L16 28 M4 16 L8 16 M24 16 L28 16' stroke='white' stroke-width='2' stroke-opacity='0.5'/%3E%3C/svg%3E") 16 16, pointer;
+        }
+        a:hover, button:hover, .btn:hover, .portfolio-card:hover, .case-item:hover, .design-philosophy-item:hover {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='12' fill='%23FF69B4' fill-opacity='0.95'/%3E%3Ccircle cx='20' cy='20' r='17' fill='none' stroke='%23FF1493' stroke-width='2' stroke-opacity='0.8'/%3E%3Ccircle cx='20' cy='20' r='5' fill='white'/%3E%3Cpath d='M20 5 L20 10 M20 30 L20 35 M5 20 L10 20 M30 20 L35 20' stroke='white' stroke-width='2' stroke-opacity='0.6'/%3E%3Ccircle cx='20' cy='20' r='20' fill='none' stroke='%23FFB6C1' stroke-width='1' stroke-opacity='0.4' stroke-dasharray='3 3'/%3E%3C/svg%3E") 20 20, pointer;
+        }
+        .design-philosophy-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .design-philosophy-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 250px;
+        }
+        .design-philosophy-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: saturate(0.9);
+        }
+        .design-philosophy-item:hover img {
+            transform: scale(1.2) rotate(-3deg);
+            filter: saturate(1.4) blur(5px);
+        }
+        .design-philosophy-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(233, 30, 99, 0.7) 100%
+            );
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .design-philosophy-item:hover .design-philosophy-overlay {
+            opacity: 1;
+        }
+        .design-philosophy-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.5s ease 0.2s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .design-philosophy-item:hover .design-philosophy-text {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .design-philosophy-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.2) 0%,
+                transparent 50%
+            );
+            transform: rotate(45deg);
+            transition: all 0.8s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .design-philosophy-item:hover::before {
+            top: -100%;
+            left: -100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Creative.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="portfolio.html">作品集</a></li>
+                <li><a href="cases.html">案例展示</a></li>
+                <li><a href="about.html" class="active">个人简介</a></li>
+                <li><a href="contact.html">联系方式</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>关于<span>我</span></h1>
+        <p>了解我的设计理念、专业技能和成长经历</p>
+    </section>
+
+    <section id="about" class="section" style="padding-top: 60px;">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/work-10.jpg" alt="设计师照片" onerror="this.style.display='none'">
+            </div>
+            <div class="about-content">
+                <h3>你好，我是<span>不艺术星球的学生</span></h3>
+                <p>未拥有三年平面设计经验，浅接触品牌视觉设计，海报设计等领域，在审美里发呆，在艺术里摸鱼。</p>
+                <p>曾0次为多家知名品牌提供设计服务，不包括科技公司，餐饮联锁，时尚品牌等。</p>
+                <div class="skills">
+                    <span class="skill-tag">品牌设计</span>
+                    <span class="skill-tag">VI设计</span>
+                    <span class="skill-tag">海报设计</span>
+                    <span class="skill-tag">包装设计</span>
+                    <span class="skill-tag">插画设计</span>
+                    <span class="skill-tag">UI设计</span>
+                    <span class="skill-tag">字体设计</span>
+                    <span class="skill-tag">排版设计</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--light);">
+        <div class="section-title">
+            <h2>设计<span>理念</span></h2>
+            <p>我对设计的理解和追求</p>
+        </div>
+        <div class="design-philosophy-container">
+            <div class="design-philosophy-item">
+                <img src="images/work-11.jpg" alt="设计理念1" onerror="this.style.display='none'">
+                <div class="design-philosophy-overlay">
+                    <div class="design-philosophy-text">简约共生，质感与实用相融</div>
+                </div>
+            </div>
+            <div class="design-philosophy-item">
+                <img src="images/work-12.jpg" alt="设计理念2" onerror="this.style.display='none'">
+                <div class="design-philosophy-overlay">
+                    <div class="design-philosophy-text">以人为本，平衡美学与体验</div>
+                </div>
+            </div>
+            <div class="design-philosophy-item">
+                <img src="images/work-11.jpg" alt="设计理念3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27250%27 viewBox=%270 0 300 250%27%3E%3Cdefs%3E%3ClinearGradient id=%27bg%27 x1=%270%25%27 y1=%270%25%27 x2=%27100%25%27 y2=%27100%25%27%3E%3Cstop offset=%270%25%27 style=%27stop-color:%23FF69B4;stop-opacity:1%27/%3E%3Cstop offset=%27100%25%27 style=%27stop-color:%23FF1493;stop-opacity:1%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%27url(%23bg)%27 width=%27300%27 height=%27250%27/%3E%3Ctext x=%27150%27 y=%27125%27 font-family=%27Arial%27 font-size=%2724%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3E自然极简%3C/text%3E%3C/svg%3E'">
+                <div class="design-philosophy-overlay">
+                    <div class="design-philosophy-text">自然极简，弱化冗余回归本真</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>希望和<span>你</span>合作</h2>
+            <p>期待与你一起创造出色的设计作品</p>
+        </div>
+        <div class="contact-container">
+            <a href="contact.html" class="btn">联系我</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 设计师作品集 | 用心设计，用创意点亮世界</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
