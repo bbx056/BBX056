@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计师作品集 - 创意设计工作室</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF69B4' fill-opacity='0.8'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23FF1493' stroke-width='2' stroke-opacity='0.6'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3C/svg%3E") 16 16, auto;
+        }
+        a, button, .btn, .portfolio-card, .case-item, .menu-toggle {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF1493' fill-opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23FF69B4' stroke-width='2' stroke-opacity='0.7'/%3E%3Ccircle cx='16' cy='16' r='4' fill='white'/%3E%3Cpath d='M16 4 L16 8 M16 24 L16 28 M4 16 L8 16 M24 16 L28 16' stroke='white' stroke-width='2' stroke-opacity='0.5'/%3E%3C/svg%3E") 16 16, pointer;
+        }
+        a:hover, button:hover, .btn:hover, .portfolio-card:hover, .case-item:hover {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='12' fill='%23FF69B4' fill-opacity='0.95'/%3E%3Ccircle cx='20' cy='20' r='17' fill='none' stroke='%23FF1493' stroke-width='2' stroke-opacity='0.8'/%3E%3Ccircle cx='20' cy='20' r='5' fill='white'/%3E%3Cpath d='M20 5 L20 10 M20 30 L20 35 M5 20 L10 20 M30 20 L35 20' stroke='white' stroke-width='2' stroke-opacity='0.6'/%3E%3Ccircle cx='20' cy='20' r='20' fill='none' stroke='%23FFB6C1' stroke-width='1' stroke-opacity='0.4' stroke-dasharray='3 3'/%3E%3C/svg%3E") 20 20, pointer;
+        }
+        #cases .case-item {
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #cases .case-image {
+            overflow: hidden;
+        }
+        #cases .case-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: saturate(1);
+        }
+        #cases .case-item:hover .case-image img {
+            transform: scale(1.15) rotate(2deg);
+            filter: saturate(1.3) blur(4px);
+        }
+        #cases .case-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(233, 30, 99, 0.3) 0%,
+                rgba(156, 39, 176, 0.2) 50%,
+                rgba(33, 150, 243, 0.3) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        #cases .case-item:hover::before {
+            opacity: 1;
+        }
+        #cases .case-item::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+        #cases .case-item:hover::after {
+            width: 300%;
+            height: 300%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Creative.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="portfolio.html">作品集</a></li>
+                <li><a href="cases.html">案例展示</a></li>
+                <li><a href="about.html">个人简介</a></li>
+                <li><a href="contact.html">联系方式</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>你好，我是<span>程美琪</span></h1>
+            <p>低电量常驻人类，主业摸鱼，副业摆烂，拒绝精神内耗，安稳混日子</p>
+            <div>
+                <a href="portfolio.html" class="btn">浏览作品</a>
+                <a href="contact.html" class="btn btn-secondary">联系我</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="section-title">
+            <h2>精选<span>作品</span></h2>
+            <p>这些是我近期完成的一些设计项目</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-card-inner">
+                    <div class="portfolio-card-front">
+                        <div class="portfolio-image">
+                            <img src="images/work-1.jpg" alt="品牌设计" onerror="this.style.display='none'">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>品牌形象设计</h3>
+                            <p>为某科技公司打造的全新品牌形象系统</p>
+                            <span class="portfolio-tag">品牌设计</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-back">
+                        <h3>信息可视化设计</h3>
+                        <p>将传统陶瓷文化转化为直观易读的视觉内容，实现非遗文化的轻量化科普传播。</p>
+                        <a href="project-branding.html" class="btn">查看详情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-card-inner">
+                    <div class="portfolio-card-front">
+                        <div class="portfolio-image">
+                            <img src="images/work-4.jpg" alt="海报设计" onerror="this.style.display='none'">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>音乐节海报</h3>
+                            <p>2024年夏季音乐节主视觉设计</p>
+                            <span class="portfolio-tag">海报设计</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-back">
+                        <h3>西兰卡普纹样再设计</h3>
+                        <p>提取其经典几何骨架、花卉符号与民族色彩，进行数字化再设计。</p>
+                        <a href="project-logo.html" class="btn">查看详情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-card-inner">
+                    <div class="portfolio-card-front">
+                        <div class="portfolio-image">
+                            <img src="images/work-7.jpg" alt="包装设计" onerror="this.style.display='none'">
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>产品包装设计</h3>
+                            <p>有机护肤品牌全系列包装设计</p>
+                            <span class="portfolio-tag">包装设计</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-back">
+                        <h3>海报设计</h3>
+                        <p>以极简蓝白剪影风格呈现东方美学意境，传递"瓷韵与君子风骨相融"的文化内核。</p>
+                        <a href="project-brochure.html" class="btn">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="portfolio.html" class="btn">查看更多作品</a>
+        </div>
+    </section>
+
+    <section id="cases" class="section">
+        <div class="section-title">
+            <h2>案例<span>展示</span></h2>
+            <p>我的设计说明</p>
+        </div>
+        <div class="cases-container">
+            <div class="case-item">
+                <div class="case-image">
+                    <img src="images/work-4.jpg" alt="案例1" onerror="this.style.display='none'">
+                </div>
+                <div class="case-content">
+                    <h3>西兰卡普系列设计</h3>
+                    <p>本系列作品以国家级非物质文化遗产土家族织锦"西兰卡普"为灵感，聚焦其经典的四方连续几何纹样与高饱和民族色彩，进行数字化转译与现代再设计。</p>
+                    <div class="case-meta">
+                        <span>品牌设计</span>
+                        <span>VI系统</span>
+                        <span>宣传物料</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="cases.html" class="btn">查看更多案例</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="section-title">
+            <h2>关于<span>我</span></h2>
+            <p>了解我的设计理念和经历</p>
+        </div>
+        <div class="about-container" style="grid-template-columns: 1fr;">
+            <div class="about-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h3>我是<span>不艺术星球的学生</span></h3>
+                <p>未拥有三年平面设计经验，浅接触品牌视觉设计，海报设计等领域，在审美里发呆，在艺术里摸鱼。</p>
+                <p>曾0次为多家知名品牌提供设计服务，不包括科技公司，餐饮联锁，时尚品牌等。</p>
+                <div class="skills">
+                    <span class="skill-tag">品牌设计</span>
+                    <span class="skill-tag">VI设计</span>
+                    <span class="skill-tag">海报设计</span>
+                    <span class="skill-tag">包装设计</span>
+                    <span class="skill-tag">插画设计</span>
+                    <span class="skill-tag">UI设计</span>
+                </div>
+                <div style="margin-top: 40px;">
+                    <a href="about.html" class="btn">了解更多</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>联系<span>我</span></h2>
+            <p>有项目合作？随时欢迎联系我</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>邮箱</h4>
+                    <p>@inb-100baek.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>电话</h4>
+                    <p>19920506bbx</p>
+                </div>
+                <div class="contact-item">
+                    <h4>微信</h4>
+                    <p>inb_baeknee</p>
+                </div>
+            </div>
+            <a href="contact.html" class="btn">给我留言</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 设计师作品集 | 用心设计，用创意点亮世界</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+    <script src="bubbles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                new ParticleEffect(heroSection);
+            }
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                new BubbleEffect(section);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例展示 - 设计师作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='8' fill='%23FF69B4' fill-opacity='0.8'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23FF1493' stroke-width='2' stroke-opacity='0.6'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3C/svg%3E") 16 16, auto;
+        }
+        a, button, .btn, .case-item, .menu-toggle {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF1493' fill-opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23FF69B4' stroke-width='2' stroke-opacity='0.7'/%3E%3Ccircle cx='16' cy='16' r='4' fill='white'/%3E%3Cpath d='M16 4 L16 8 M16 24 L16 28 M4 16 L8 16 M24 16 L28 16' stroke='white' stroke-width='2' stroke-opacity='0.5'/%3E%3C/svg%3E") 16 16, pointer;
+        }
+        a:hover, button:hover, .btn:hover, .case-item:hover {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='12' fill='%23FF69B4' fill-opacity='0.95'/%3E%3Ccircle cx='20' cy='20' r='17' fill='none' stroke='%23FF1493' stroke-width='2' stroke-opacity='0.8'/%3E%3Ccircle cx='20' cy='20' r='5' fill='white'/%3E%3Cpath d='M20 5 L20 10 M20 30 L20 35 M5 20 L10 20 M30 20 L35 20' stroke='white' stroke-width='2' stroke-opacity='0.6'/%3E%3Ccircle cx='20' cy='20' r='20' fill='none' stroke='%23FFB6C1' stroke-width='1' stroke-opacity='0.4' stroke-dasharray='3 3'/%3E%3C/svg%3E") 20 20, pointer;
+        }
+        .case-item {
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+        }
+        .case-image {
+            overflow: hidden;
+        }
+        .case-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: saturate(1);
+        }
+        .case-item:hover .case-image img {
+            transform: scale(1.15) rotate(2deg);
+            filter: saturate(1.3) blur(4px);
+        }
+        .case-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(233, 30, 99, 0.3) 0%,
+                rgba(156, 39, 176, 0.2) 50%,
+                rgba(33, 150, 243, 0.3) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .case-item:hover::before {
+            opacity: 1;
+        }
+        .case-item::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .case-item:hover::after {
+            width: 300%;
+            height: 300%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Creative.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="portfolio.html">作品集</a></li>
+                <li><a href="cases.html" class="active">案例展示</a></li>
+                <li><a href="about.html">个人简介</a></li>
+                <li><a href="contact.html">联系方式</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>案例<span>展示</span></h1>
+        <p>深入了解每个项目的设计思路、过程和最终成果</p>
+    </section>
+
+    <section id="cases" class="section" style="padding-top: 60px;">
+        <div class="cases-container">
+            <div class="case-item">
+                <div class="case-image">
+                    <img src="images/work-1.jpg" alt="青花瓷信息可视化设计" onerror="this.style.display='none'">
+                </div>
+                <div class="case-content">
+                    <h3>青花瓷信息可视化设计</h3>
+                    <p>本项目以中国四大名瓷之一的青花瓷为主题，通过信息可视化设计，系统梳理其产地、器型、制作工艺与历史脉络，将传统陶瓷文化转化为直观易读的视觉内容，实现非遗文化的轻量化科普传播。</p>
+                    <div class="case-meta">
+                        <span>信息可视化</span>
+                        <span>非遗文化</span>
+                        <span>青花瓷</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-item">
+                <div class="case-image">
+                    <img src="images/work-4.jpg" alt="西兰卡普纹样再设计" onerror="this.style.display='none'">
+                </div>
+                <div class="case-content">
+                    <h3>西兰卡普纹样再设计</h3>
+                    <p>本项目以国家级非物质文化遗产土家族织锦西兰卡普为灵感，提取其经典几何骨架、花卉符号与民族色彩，进行数字化再设计。通过三组风格化实践，让传统织锦纹样适配当代视觉语言，探索非遗美学的年轻化表达路径。</p>
+                    <div class="case-meta">
+                        <span>纹样设计</span>
+                        <span>非遗文化</span>
+                        <span>西兰卡普</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-item">
+                <div class="case-image">
+                    <img src="images/work-8.jpg" alt="青花瓷「瓷韵」系列海报" onerror="this.style.display='none'">
+                </div>
+                <div class="case-content">
+                    <h3>青花瓷「瓷韵」系列海报</h3>
+                    <p>本系列海报以青花瓷文化为主题，将中国传统文人"四君子"意象（兰、竹、梅）与经典瓷瓶造型结合，以极简蓝白剪影风格呈现东方美学意境，传递"瓷韵与君子风骨相融"的文化内核。</p>
+                    <div class="case-meta">
+                        <span>海报设计</span>
+                        <span>青花瓷</span>
+                        <span>东方美学</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>想要<span>合作</span></h2>
+            <p>把你的想法告诉我，我们一起创造出色的设计</p>
+        </div>
+        <div class="contact-container">
+            <a href="contact.html" class="btn">开始咨询</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 设计师作品集 | 用心设计，用创意点亮世界</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
